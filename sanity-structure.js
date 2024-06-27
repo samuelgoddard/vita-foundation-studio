@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import IframePreview from './preview/IFramePreview'
+import Iframe from "sanity-plugin-iframe-pane";
 
 import {
   FiHome,
@@ -22,9 +22,19 @@ const getPreview = (schemaType) => {
     return [
       S.view.form(),
       S.view
-        .component(IframePreview)
+        .component(Iframe)
         .title('Preview Mode')
-        .options({ previewURL, isMobile: false, globalSlug })
+        .options({
+          // Required: Accepts an async function
+          // url: (doc) => getPreview(doc),
+          url: previewURL + globalSlug,
+          defaultSize: `desktop`,
+          reload: {
+            button: true,
+            revision: true,
+          },
+        
+        })
     ]
   }
   return [S.view.form()]
