@@ -1,9 +1,9 @@
-# ShiftWalk Sanity Studio Starter
+# VITA Foundation Sanity Studio
 
 A simple Sanity Studio starter kit with preview mode, custom structuring, vercel deploy and reorder documents preconfigured.
 
 ```
-gh repo clone shiftwalk/shiftwalk-sanity-starter
+gh repo clone samuelgoddard/vita-foundation-studio
 sanity install
 sanity start
 ```

@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "shiftwalk-sanity-starter"
-  },
   "api": {
-    "projectId": "your-id-here",
+    "projectId": "e3yj246w",
     "dataset": "production"
+  },
+  "project": {
+    "name": "vita-foundation-studio"
   },
   "plugins": [
     "@sanity/base",
@@ -16,8 +16,7 @@
     "@sanity/dashboard",
     "media",
     "@sanity/production-preview",
-    "vercel-deploy",
-    "order-documents"
+    "vercel-deploy"
   ],
   "env": {
     "development": {

@@ -1,8 +1,8 @@
 import { FiInfo, FiLink } from 'react-icons/fi'
 
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'About',
+  name: 'about',
   type: 'document',
   __experimental_actions: ['update', 'create', 'delete', 'publish'],
   groups: [
@@ -30,13 +30,6 @@ export default {
       title: 'Hero',
       name: 'hero',
       type: 'hero',
-      group: 'content'
-    },
-    {
-      title: 'Stats Section',
-      name: 'statsSection',
-      type: 'stats',
-      description: 'The main heading block of the page',
       group: 'content'
     },
     {

@@ -2,9 +2,7 @@ export default {
   title: 'SEO / Share Settings',
   name: 'seo',
   type: 'object',
-  options: {
-    collapsible: true
-  },
+  description: 'Custom manual overrides for certain SEO fields.',
   fields: [
     {
       title: 'Meta Title',
