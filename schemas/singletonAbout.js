@@ -33,6 +33,12 @@ export default {
       group: 'content'
     },
     {
+      title: 'Content Blocks',
+      name: 'contentBlocks',
+      type: 'contentBlocks',
+      group: 'content'
+    },
+    {
       title: 'SEO / Share Settings',
       name: 'seo',
       type: 'seo',

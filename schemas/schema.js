@@ -15,11 +15,14 @@ import team from './team'
 
 // Common
 import seo from './common/seo'
+import contentBlocks from './common/contentBlocks'
 import contentSimple from './common/contentSimple'
 import contentMinimal from './common/contentMinimal'
 import defaultImage from './common/defaultImage'
 import hero from './common/hero'
 import stats from './common/stats'
+import values from './common/values'
+import list from './common/list'
 
 export default createSchema({
   name: 'default',
@@ -36,11 +39,14 @@ export default createSchema({
     educationalResources,
     events,
     // Common
+    contentBlocks,
     contentSimple,
     contentMinimal,
     defaultImage,
     hero,
+    list,
     stats,
+    values,
     seo
   ]),
 })

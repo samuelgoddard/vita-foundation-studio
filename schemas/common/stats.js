@@ -1,10 +1,11 @@
-import { FiInfo, FiLink, FiCheckCircle } from 'react-icons/fi'
+import { FiGrid, FiCheckCircle } from 'react-icons/fi'
 
 export default {
   title: 'Stats Section',
   name: 'stats',
   type: 'object',
-  description: 'The statistics grid block',
+  icon: FiGrid,
+  description: 'Renders a section with a a grid of stat based info boxes',
   fields: [
     {
       title: 'Section Tagline',
@@ -64,5 +65,9 @@ export default {
         },
       ],
     },
-  ]
+  ],
+  preview: {
+    title: 'Statistics BLokckk',
+    subtitle: 'test'
+  }
 }

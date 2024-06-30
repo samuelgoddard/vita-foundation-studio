@@ -16,6 +16,8 @@ import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
 
 export const getDefaultDocumentNode = ({ schemaType }) => S.document().views(getPreview(schemaType))
 
+const secret = process.env.SANITY_STUDIO_PREVIEW_SECRET
+
 const getPreview = (schemaType) => {
   const globalSlug = getGlobalSlug(schemaType)
   if (globalSlug) {
@@ -27,7 +29,7 @@ const getPreview = (schemaType) => {
         .options({
           // Required: Accepts an async function
           // url: (doc) => getPreview(doc),
-          url:`${previewURL}/api/preview?secret=${process.env.SANITY_PREVIEW_SECRET}&slug=${globalSlug}`,
+          url:`${previewURL}/api/preview?secret=${secret}&slug=${globalSlug}`,
           defaultSize: `desktop`,
           reload: {
             button: true,
