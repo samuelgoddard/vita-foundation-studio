@@ -27,11 +27,11 @@ const getPreview = (schemaType) => {
         .options({
           // Required: Accepts an async function
           // url: (doc) => getPreview(doc),
-          url: previewURL + globalSlug,
+          url:`${previewURL}/api/preview?secret=${process.env.SANITY_PREVIEW_SECRET}&slug=${globalSlug}`,
           defaultSize: `desktop`,
           reload: {
             button: true,
-            revision: true,
+            revision: 500,
           },
         
         })
