@@ -19,5 +19,16 @@ export default {
       name: 'caption',
       type: 'string'
     }
-  ]
+  ],
+  preview: {
+    select: {
+      image: 'asset',
+    },
+    prepare ({ image }) {
+      return {
+        title: `*Image Block*`,
+        media: image
+      }
+    }
+  }
 }

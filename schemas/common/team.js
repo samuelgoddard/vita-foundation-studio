@@ -1,10 +1,10 @@
-import { FiHeart } from 'react-icons/fi'
+import { FiUsers } from 'react-icons/fi'
 
 export default {
-  title: 'Values Section',
-  name: 'valuesSection',
+  title: 'Team Section',
+  name: 'teamSection',
   type: 'object',
-  icon: FiHeart,
+  icon: FiUsers,
   description: 'Renders a section with a grid of values',
   fields: [
     {
@@ -25,29 +25,7 @@ export default {
       type: 'text', 
       description: 'Optional: Text below the hero heading text',
       rows: 3
-    },
-    {
-      title: 'Values',
-      name: 'values',
-      type: 'array',
-      of: [
-        {
-          name: 'text',
-          type: 'string',
-          validation: Rule => Rule.required()
-        },
-      ],
-      preview: {
-        select: {
-          text: 'text',
-        },
-        prepare ({ text }) {
-          return {
-            title: text
-          }
-        }
-      }
-    },
+    }
   ],
   preview: {
     select: {
@@ -55,7 +33,7 @@ export default {
     },
     prepare ({ sectionTagline }) {
       return {
-        title: `*Values Block*: ${sectionTagline}`
+        title: `*Team Block*: ${sectionTagline}`
       }
     }
   }

@@ -32,22 +32,36 @@ export default {
       type: 'array',
       of: [
         {
-          title: 'Text',
           name: 'text',
-          type: 'string',
+          rows: 3,
+          type: 'text',
           validation: Rule => Rule.required()
-        },
-      ],
-      preview: {
-        select: {
-          text: 'text',
-        },
-        prepare ({ text }) {
-          return {
-            title: text
-          }
         }
-      }
+      ]
     },
-  ]
+    {
+      title: 'Footnotes',
+      name: 'footnotes',
+      description: 'Optionally add some footnotes for further notation',
+      type: 'array',
+      of: [
+        {
+          name: 'text',
+          rows: 3,
+          type: 'text',
+          validation: Rule => Rule.required()
+        }
+      ]
+    }
+  ],
+  preview: {
+    select: {
+      sectionTagline: 'sectionTagline',
+    },
+    prepare ({ sectionTagline }) {
+      return {
+        title: `*List Block*: ${sectionTagline}`
+      }
+    }
+  }
 }

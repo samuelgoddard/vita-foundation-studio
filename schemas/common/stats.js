@@ -67,7 +67,13 @@ export default {
     },
   ],
   preview: {
-    title: 'Statistics BLokckk',
-    subtitle: 'test'
+    select: {
+      sectionTagline: 'sectionTagline',
+    },
+    prepare ({ sectionTagline }) {
+      return {
+        title: `*Stats Block*: ${sectionTagline}`
+      }
+    }
   }
 }

@@ -39,6 +39,12 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Content',
+      name: 'content',
+      type: 'contentRich',
+      group: 'content'
+    },
+    {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
@@ -69,7 +75,15 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title'
+      title: 'title',
+      date: 'publishedDate'
+    },
+    prepare(selection) {
+      const {title, date} = selection
+      return {
+        title: title,
+        subtitle: new Date(date).toLocaleDateString()
+      }
     }
   }
 }

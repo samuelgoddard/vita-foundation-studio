@@ -1,10 +1,12 @@
 import S from "@sanity/desk-tool/structure-builder";
 import Iframe from "sanity-plugin-iframe-pane";
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 import {
   FiHome,
   FiHelpCircle,
   FiEdit,
+  FiGlobe,
   FiCalendar,
   FiSmile,
   FiZap,
@@ -34,8 +36,7 @@ const getPreview = (schemaType) => {
           reload: {
             button: true,
             revision: 500,
-          },
-        
+          }
         })
     ]
   }
@@ -50,9 +51,15 @@ export default () =>
       S.divider(),
       S.listItem().title('About Us').child(S.editor().id('about').schemaType('about').documentId('singleton-about').views(getPreview('about'))).icon(FiSmile),
       S.divider(),
-      S.listItem().title('Team').child(S.documentTypeList('team').title('Team')).icon(FiUsers),
+      orderableDocumentListDeskItem({
+        type: 'team',
+        title: 'Team',
+        icon: FiUsers
+      }),
       S.divider(),
       S.listItem().title('VITA Training').child(S.editor().id('training').schemaType('training').documentId('singleton-training').views(getPreview('training'))).icon(FiHelpCircle),
+      S.divider(),
+      S.listItem().title('VITA Network').child(S.editor().id('network').schemaType('network').documentId('singleton-network').views(getPreview('network'))).icon(FiGlobe),
       S.divider(),
       S.listItem()
         .title('Resources')
@@ -64,7 +71,9 @@ export default () =>
               S.divider(),
               S.listItem().title('Educational Resources').child(S.documentTypeList('educationalResources').title('Educational Resources')).icon(FiZap),
               S.divider(),
-              S.listItem().title('Events').child(S.documentTypeList('events').title('Events')).icon(FiCalendar)
+              S.listItem().title('Events').child(S.documentTypeList('events').title('Events')).icon(FiCalendar),
+              S.divider(),
+              S.listItem().title('Authors').child(S.documentTypeList('author').title('Authors')).icon(FiUsers)
             ])),
       S.divider(),
       S.listItem().title('Company Details').child(S.editor().id('company').schemaType('company').documentId('singleton-company').views(getPreview('company'))).icon(FiPhone),

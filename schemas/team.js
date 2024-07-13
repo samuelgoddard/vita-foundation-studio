@@ -1,9 +1,15 @@
-import { FiInfo, FiLink } from 'react-icons/fi'
+import { FiInfo, FiUser, FiLink } from 'react-icons/fi'
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
 
 export default {
   title: 'Team',
   name: 'team',
+  icon: FiUser,
   type: 'document',
+  orderings: [orderRankOrdering],
   fields: [
     {
       title: 'Title',
@@ -12,6 +18,7 @@ export default {
       type: 'string',
       validation: Rule => Rule.required()
     },
+    orderRankField({ type: 'team' }),
     {
       title: 'Position',
       description: 'The position this member holds at VITA, eg: "Founder and CEO of VITA"',

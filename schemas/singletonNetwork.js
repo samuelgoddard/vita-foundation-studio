@@ -1,8 +1,8 @@
-import { FiInfo, FiLink } from 'react-icons/fi'
+import { FiInfo, FiLink, FiCheckCircle } from 'react-icons/fi'
 
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'Network',
+  name: 'network',
   type: 'document',
   __experimental_actions: ['update', 'create', 'delete', 'publish'],
   groups: [
@@ -30,13 +30,28 @@ export default {
       title: 'Hero',
       name: 'hero',
       type: 'hero',
-      group: 'content'
+      group: 'content',
     },
     {
-      title: 'Content Blocks',
-      name: 'contentBlocks',
-      type: 'contentBlocks',
-      group: 'content'
+      title: 'About Section',
+      name: 'aboutSection',
+      type: 'object',
+      group: 'content',
+      fields: [
+        {
+          title: 'About Section Text',
+          name: 'aboutSectionText',
+          type: 'array',
+          of: [{type: 'block'}],
+          validation: Rule => Rule.required()
+        },
+        {
+          title: 'About Section Image',
+          name: 'aboutSectionImage',
+          type: 'defaultImage',
+          validation: Rule => Rule.required()
+        },
+      ]
     },
     {
       title: 'SEO / Share Settings',

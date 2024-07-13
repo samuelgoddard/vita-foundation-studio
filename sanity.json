@@ -14,6 +14,7 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "@sanity/dashboard",
+    "@sanity/orderable-document-list",
     "media",
     "@sanity/production-preview",
     "vercel-deploy",

@@ -7,5 +7,6 @@ export default {
     {type: 'listSection'},
     {type: 'valuesSection'},
     {type: 'stats'},
+    {type: 'teamSection'},
   ]
 }

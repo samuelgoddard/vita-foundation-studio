@@ -28,6 +28,14 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Author',
+      name: 'author',
+      type: 'reference',
+      to: [{type: 'author'}],
+      group: 'content',
+      validation: Rule => Rule.required()
+    },
+    {
       title: 'Published Date',
       name: 'publishedDate',
       type: 'date',
@@ -37,6 +45,12 @@ export default {
       },
       group: 'content',
       validation: Rule => Rule.required()
+    },
+    {
+      title: 'Content',
+      name: 'content',
+      type: 'contentRich',
+      group: 'content'
     },
     {
       name: 'slug',
@@ -70,13 +84,14 @@ export default {
   preview: {
     select: {
       title: 'title',
-      date: 'publishedDate'
+      date: 'publishedDate',
+      author: 'author.name'
     },
     prepare(selection) {
-      const {title, date} = selection
+      const {title, date, author} = selection
       return {
         title: title,
-        subtitle: new Date(date).toLocaleDateString()
+        subtitle: `${new Date(date).toLocaleDateString()} - ${author}`
       }
     }
   }
