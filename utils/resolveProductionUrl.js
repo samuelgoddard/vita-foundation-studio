@@ -4,7 +4,9 @@ const globalSlugs = {
   about: '/about',
   network: '/network',
   training: '/training',
-  resources: '/resources'
+  blog: '/blog',
+  educationalResources: '/educational-resources',
+  event: '/events'
 }
 
 const secret = process.env.SANITY_STUDIO_PREVIEW_SECRET

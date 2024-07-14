@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-import Iframe from "sanity-plugin-iframe-pane";
+import IframePreview from './preview/IFramePreview'
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 import {
@@ -18,30 +18,20 @@ import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
 
 export const getDefaultDocumentNode = ({ schemaType }) => S.document().views(getPreview(schemaType))
 
-const secret = process.env.SANITY_STUDIO_PREVIEW_SECRET
-
 const getPreview = (schemaType) => {
   const globalSlug = getGlobalSlug(schemaType)
   if (globalSlug) {
     return [
       S.view.form(),
       S.view
-        .component(Iframe)
-        .title('Preview Mode')
-        .options({
-          // Required: Accepts an async function
-          // url: (doc) => getPreview(doc),
-          url:`${previewURL}/api/preview?secret=${secret}&slug=${globalSlug}`,
-          defaultSize: `desktop`,
-          reload: {
-            button: true,
-            revision: 500,
-          }
-        })
+        .component(IframePreview)
+        .title('Web Preview')
+        .options({ previewURL, isMobile: false, globalSlug }),
     ]
   }
   return [S.view.form()]
 }
+
 
 export default () =>
   S.list()
@@ -71,7 +61,7 @@ export default () =>
               S.divider(),
               S.listItem().title('Educational Resources').child(S.documentTypeList('educationalResources').title('Educational Resources')).icon(FiZap),
               S.divider(),
-              S.listItem().title('Events').child(S.documentTypeList('events').title('Events')).icon(FiCalendar),
+              S.listItem().title('Events').child(S.documentTypeList('event').title('Events')).icon(FiCalendar),
               S.divider(),
               S.listItem().title('Authors').child(S.documentTypeList('author').title('Authors')).icon(FiUsers)
             ])),

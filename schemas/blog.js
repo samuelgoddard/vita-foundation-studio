@@ -1,9 +1,10 @@
-import { FiInfo, FiLink } from 'react-icons/fi'
+import { FiEdit, FiInfo, FiLink } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
   title: 'Blog',
   name: 'blog',
+  icon: FiEdit,
   type: 'document',
   groups: [
     {

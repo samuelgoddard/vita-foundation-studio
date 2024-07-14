@@ -1,9 +1,10 @@
-import { FiInfo, FiLink } from 'react-icons/fi'
+import { FiCalendar, FiInfo, FiLink } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
   title: 'Events',
-  name: 'events',
+  name: 'event',
+  icon: FiCalendar,
   type: 'document',
   groups: [
     {
@@ -28,8 +29,8 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Published Date',
-      name: 'publishedDate',
+      title: 'Event Date',
+      name: 'eventDate',
       type: 'date',
       options: {
         dateFormat: 'DD MMMM YYYY',
@@ -37,6 +38,19 @@ export default {
       },
       group: 'content',
       validation: Rule => Rule.required()
+    },
+    {
+      title: 'Event Ticket Link',
+      name: 'eventTicketLink',
+      description: 'The link to the exteral ticket page, eg: TicketTailor etc',
+      type: 'url',
+      group: 'content',
+    },
+    {
+      title: 'Content',
+      name: 'content',
+      type: 'contentRich',
+      group: 'content'
     },
     {
       name: 'slug',
@@ -69,7 +83,15 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title'
+      title: 'title',
+      date: 'eventDate',
+    },
+    prepare(selection) {
+      const {title, date} = selection
+      return {
+        title: title,
+        subtitle: `${new Date(date).toLocaleDateString()}`
+      }
     }
   }
 }

@@ -1,9 +1,10 @@
-import { FiInfo, FiLink } from 'react-icons/fi'
+import { FiInfo, FiLink, FiZap } from 'react-icons/fi'
 import slugify from '../utils/slugify'
 
 export default {
   title: 'Educational Resources',
   name: 'educationalResources',
+  icon: FiZap,
   type: 'document',
   groups: [
     {
