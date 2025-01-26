@@ -27,6 +27,15 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Bio',
+      description: 'The optional bio of this member',
+      name: 'bio',
+      type: 'text',
+      options: {
+        rows: 3
+      }
+    },
+    {
       title: 'Image',
       description: 'Optional: Image of this member',
       name: 'image',
