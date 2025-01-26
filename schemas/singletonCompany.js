@@ -31,6 +31,18 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Sign Up Button URL',
+      name: 'signUpButtonURL',
+      type: 'url',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Donate Button URL',
+      name: 'donateButtonURL',
+      type: 'url',
+      validation: Rule => Rule.required()
+    },
+    {
       title: 'Socials',
       name: 'socials',
       type: 'array',
